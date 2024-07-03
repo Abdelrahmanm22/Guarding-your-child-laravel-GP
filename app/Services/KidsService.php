@@ -182,10 +182,11 @@ class KidsService
         return $kid;
     }
 
-    public function addMedicalHistory($kidID)
+    public function addMedicalHistory($kidID,$bloodType)
     {
         MedicalHistory::create([
-            'kid_id'=>$kidID
+            'kid_id'=>$kidID,
+            'bloodType'=>$bloodType,
         ]);
     }
 

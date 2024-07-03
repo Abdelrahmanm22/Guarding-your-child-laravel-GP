@@ -39,6 +39,7 @@ class AddKidRequest extends FormRequest
             'mother_name'=>'required|max:50',
             'address'=>'required|max:200',
             'phone'=>'required',
+            'bloodType' => 'required|in:O-,O+,A-,A+,B-,B+,AB-,AB+'
         ];
     }
     protected function failedValidation(Validator $validator)

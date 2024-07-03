@@ -45,7 +45,7 @@ class DoctorController extends Controller
         // Fetch the kid with its guardian
         $kidWithGuardian = Kid::with('guardian')->find($kid->id);
 
-        $this->kidService->addMedicalHistory($kid->id);
+        $this->kidService->addMedicalHistory($kid->id,$addKidRequest->bloodType);
 
         if ($kidWithGuardian) {
             return $this->apiResponse($kidWithGuardian, 'Kid added successfully with guardian', 201);
