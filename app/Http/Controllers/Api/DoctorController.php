@@ -74,12 +74,32 @@ class DoctorController extends Controller
         }
     }
 
+    ///live search to get kids by SSN
     public function search(Request $request)
     {
         $SSN = $request->SSN;
         $kids = $this->kidService->searchBySSN($SSN);
         return $this->apiResponse($kids,"Search Done Successfully",200);
     }
+
+
+    public function searchMedicalHistory(Request $request)
+    {
+        if ($request->has('SSN')) {
+            $kid = $this->kidService->getKidBySSN($request->SSN);
+            if (is_null($kid)) {
+                return $this->apiResponse(null, "Kid not found", 404);
+            }
+            return $this->apiResponse($kid, "Search Medical History by SSN Successfully", 200);
+        } elseif ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $kids = $this->kidService->search($image);
+            return $this->apiResponse($kids, "Search Medical History by Image Successfully", 200);
+        } else {
+            return $this->apiResponse(null, "No SSN or Image Provided", 400);
+        }
+    }
+
 
     public function medicalHistory($kid)
     {

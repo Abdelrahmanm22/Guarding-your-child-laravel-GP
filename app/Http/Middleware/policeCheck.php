@@ -15,7 +15,7 @@ class policeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role!='police' and auth()->user()->role!='doctor'){
+        if (auth()->user()->role!='police'){
             return response()->json(['message' => 'Not Allow for you to access this api']);
         }
         return $next($request);

@@ -145,7 +145,9 @@ class KidsService
         return $kid;
     }
 
-    public function searchBySSN($SSN)
+
+
+    public function searchBySSN($SSN) ///search live
     {
         $kids = Kid::where('SSN', 'like', '%' . $SSN . '%')->with('guardian')->get();
 
@@ -172,6 +174,12 @@ class KidsService
             'current_page' => $paginatedKids->currentPage(),
             'next_page_url'=>$paginatedKids->nextPageUrl(),
         ];
+    }
+
+    public function getKidBySSN($SSN)
+    {
+        $kid = Kid::where('SSN', 'like', '%' . $SSN . '%')->with('medicalHistory')->first();
+        return $kid;
     }
 
     public function addMedicalHistory($kidID)
