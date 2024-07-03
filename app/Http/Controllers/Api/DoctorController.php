@@ -93,8 +93,10 @@ class DoctorController extends Controller
             return $this->apiResponse($kid, "Search Medical History by SSN Successfully", 200);
         } elseif ($request->hasFile('image')) {
             $image = $request->file('image');
-            $kids = $this->kidService->search($image);
-            return $this->apiResponse($kids, "Search Medical History by Image Successfully", 200);
+            $kid = $this->kidService->search($image);
+            // Load the medicalHistory relationship
+            $kid->load('medicalHistory');
+            return $this->apiResponse($kid, "Search Medical History by Image Successfully", 200);
         } else {
             return $this->apiResponse(null, "No SSN or Image Provided", 400);
         }

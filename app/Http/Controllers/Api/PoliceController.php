@@ -22,6 +22,8 @@ class PoliceController extends Controller
 
         $kid = $this->kidService->search($image);
         if ($kid){
+            // Load the guardian relationship
+            $kid->load('guardian');
             return $this->apiResponse($kid,"Search Done Successfully",200);
         }else{
             return $this->apiResponse(null,"Found Errors",404);

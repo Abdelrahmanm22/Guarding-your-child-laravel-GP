@@ -141,7 +141,7 @@ class KidsService
         $responseData = json_decode($responseBody, true);
 
         $index = $responseData['index'];
-        $kid = Kid::where('index',$index)->with('guardian')->get();
+        $kid = Kid::where('index',$index)->first();
         return $kid;
     }
 
@@ -178,7 +178,7 @@ class KidsService
 
     public function getKidBySSN($SSN)
     {
-        $kid = Kid::where('SSN', 'like', '%' . $SSN . '%')->with('medicalHistory')->first();
+        $kid = Kid::where('SSN', $SSN )->with('medicalHistory')->first();
         return $kid;
     }
 
