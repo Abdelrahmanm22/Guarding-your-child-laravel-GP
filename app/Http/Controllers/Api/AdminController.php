@@ -13,7 +13,6 @@ class AdminController extends Controller
 {
     public function createAccount(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|between:2,100|unique:users',
             'password' => 'required|string|confirmed|min:6',
