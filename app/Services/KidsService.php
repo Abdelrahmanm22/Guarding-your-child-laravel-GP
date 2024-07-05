@@ -140,6 +140,12 @@ class KidsService
         $responseBody = $response->getBody()->getContents();
         $responseData = json_decode($responseBody, true);
 
+        $accuracy = $responseData['accuracy'];
+
+        if ($accuracy<=0.90){
+            return null;
+        }
+
         $index = $responseData['index'];
         $kid = Kid::where('index',$index)->first();
         return $kid;

@@ -40,7 +40,9 @@ Route::group(['middleware'=>'jwt.verify'],function (){
         Route::get('/medicalHistory/{kid}',[\App\Http\Controllers\Api\DoctorController::class,'medicalHistory']);
         Route::post('/getMedicalHistory',[\App\Http\Controllers\Api\DoctorController::class,'searchMedicalHistory']);
 
+
     });
+
 
 
     ///routes for police

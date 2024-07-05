@@ -94,6 +94,10 @@ class DoctorController extends Controller
         } elseif ($request->hasFile('image')) {
             $image = $request->file('image');
             $kid = $this->kidService->search($image);
+            ///if kid not found
+            if ($kid==null){
+                return $this->apiResponse(null, "Kid not found", 404);
+            }
             // Load the medicalHistory relationship
             $kid->load('medicalHistory');
             return $this->apiResponse($kid, "Search Medical History by Image Successfully", 200);

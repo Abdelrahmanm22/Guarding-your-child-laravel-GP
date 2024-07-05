@@ -25,8 +25,9 @@ class PoliceController extends Controller
             // Load the guardian relationship
             $kid->load('guardian');
             return $this->apiResponse($kid,"Search Done Successfully",200);
-        }else{
-            return $this->apiResponse(null,"Found Errors",404);
+        }else if ($kid==null){
+            ///if kid not found
+            return $this->apiResponse(null, "Kid not found", 404);
         }
     }
 }
