@@ -1,66 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Footprint Tracking
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Graduation Project (2023-2024)**  
+Cairo University - Faculty of Computers and Artificial Intelligence, Department of Computer Sciences
 
-## About Laravel
+**Supervised by:**  
+- Dr. Desoky Abd El-qawy  
+- TA. Asmaa  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Developed by:**  
+- Ibrahim Esmail Ebrahim (20200828)  
+- Zeyad Farag Mohamed (20200203)  
+- Youssef Diaa El Sayed (20200813)  
+- Abdelrahman Mohamed Ramadan (20200293)  
+- Abdelrahman Tarek Rafaat (20200288)  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Abstract
 
-## Learning Laravel
+Footprint Tracking is an innovative project designed to address the global issue of missing and kidnapped children, especially newborns who lack identifiable facial characteristics. Using footprint recognition technology, the software enables hospitals to create a secure database of newborn profiles. If a case of suspected kidnapping arises, law enforcement can search for a child's profile by scanning their footprint or fingerprint, verifying parent information if a match is found.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This tool serves as a resource for both hospitals and child welfare organizations by maintaining a secure database, assisting with parental disputes, adoption cases, and other legal matters where child identification is critical. Through its fingerprint recognition technology, the system provides a robust solution to enhance child protection and aid in the search for missing children.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Table of Contents
 
-## Laravel Sponsors
+1. [Introduction](#introduction)
+   - Motivation
+   - Problem Definition
+   - Problem Objective
+2. [Methodology](#methodology)
+3. [Used Tools](#used-tools)
+4. [Related Work](#related-work)
+5. [Model Architecture](#model-architecture)
+6. [Dataset](#dataset)
+7. [Project Phases](#project-phases)
+8. [Conclusion](#conclusion)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## Introduction
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Motivation
 
-## Contributing
+According to reports by the National Center for Missing and Exploited Children (NCMEC) and the International Centre for Missing & Exploited Children (ICMEC), Egypt is among the top countries in the MENA region for missing children. This project aims to leverage technology to support faster, more accurate searches and reunions of missing children with their families.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Problem Definition
 
-## Code of Conduct
+Traditional search methods for missing children are slow and often ineffective, especially for newborns. This project addresses the challenges of finding missing children by enabling the registration of newborn footprints in a searchable database accessible to law enforcement.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Problem Objective
 
-## Security Vulnerabilities
+Footprint Tracking allows medical professionals to easily record newborn footprints, along with critical information such as names, addresses, and parent details. Law enforcement can identify and track children in abandonment or kidnapping scenarios, supporting child protection efforts and facilitating family reunions.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Methodology
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Our methodology follows the **Waterfall** model:
+1. **Requirements**: Gathering needs from doctors and law enforcement.
+2. **Design**: Developing a structured system to enable footprint uploading, record-keeping, and fingerprint recognition.
+3. **Implementation**: Building and integrating the front end with machine learning models for fingerprint recognition.
+4. **Testing**: Conducting unit, integration, and usability testing.
+5. **Deployment & Maintenance**: Releasing the system for use and ensuring continuous support.
+
+---
+
+## Used Tools
+
+### Front-End
+- **Flutter**: Enables cross-platform development for Android, iOS, and web applications.
+
+### Machine Learning
+- **Flask**: For deploying machine learning models as web applications.
+
+### Back-End
+- **Laravel**: Manages data processing, storage, and API development.
+
+---
+
+## Related Work
+
+Existing tools like **Safe Kids**, **Find My Kids**, and **Social Media Platforms** (e.g., Amber Alerts) have inspired the development of this project. Footprint Tracking leverages these concepts by incorporating footprint/fingerprint recognition, making it accessible even for newborns who lack developed facial characteristics.
+
+---
+
+## Model Architecture
+
+### Siamese Network
+
+Our model uses a **Siamese Network** for one-shot learning, a model architecture ideal for identifying unique features with limited data. This includes:
+- **Twin Networks**: Shared weights for comparable feature extraction.
+- **Distance Metric**: Measures similarity between inputs, classifying them as similar or dissimilar.
+
+### Advantages
+- **Data Efficiency**: Requires fewer samples.
+- **Scalability**: Can adapt to new individuals without extensive retraining.
+
+---
+
+## Dataset
+
+Our dataset comprises hundreds of labeled fingerprints and footprints. Images are preprocessed and resized, with augmentations applied to address limited data availability.
+
+---
+
+## Project Phases
+
+1. **Requirements Gathering**
+2. **Design and Architecture**
+3. **Implementation (ML model, Front-End, Back-End)**
+4. **Testing**
+5. **Deployment & Maintenance**
+
+---
+
+## Conclusion
+
+The Footprint Tracking system represents an important step in child protection, enabling faster, accurate identification of missing, kidnapped, or abandoned children. Through this project, we aim to empower law enforcement and medical professionals with the tools needed to support child safety and reunification efforts.
+
+--- 
